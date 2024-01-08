@@ -95,20 +95,3 @@ ax5.title.set_text('DBSCAN')
 
 plt.show()
 
-# The Silhouette Score measures the quality of clustering by computing the average distance between a data point and all other points within the same cluster (intra-cluster distance) and 
-# comparing it to the average distance between that data point and all points in the nearest neighboring cluster (inter-cluster distance).
-# The silhouette score ranges from -1 to +, so a score close to +1 indicates that the data point is well-clustered and lies far away from neighbouring clusters.
-# The average silhouette score for all samples is used as an overall measure of the clustering quality. A higher average silhouette score implies better-defined clusters.
-# The Davies-Bouldin Index measures the average similarity between each cluster and its most similar cluster, taking into account both intra-cluster and inter-cluster distances.
-# A lower Davies-Bouldin Index indicates better clustering; smaller values suggest better separation between clusters.
-# The aim is to maximize the Silhouette Score and minimize the Davies-Bouldin Index for better-defined and well-separated clusters
-
-# We can see that for a cluster size of 6, K-Means and the Agglomeration clustering methods perform the best on the dataset.
-# We will also test the use of DBSCAN, which doesnt have a fixed number of clusters ( which includes noise ) but uses density of the data. To tune it,
-# a heuristic method used is to first defines the minimum points based on the number of dimensions + 1 ( here 18 ).
-# Then, we try the clustering method on a range of epsilon from 2 to 600 to try to match the number of clusters found by the elbow method.
-# We find that at eps = 500, we have the numbers of clusters N = 4 (excluding noise). 
-
-# Using this method and comparing it to the others with its Silhouette and Davies-Bouldin, we find that it is the best scoring method of them all, using only 4 clusters
-# ( so there is no overfitting ).
-# Thus, we can conclude that it is the best method for our dataset. 
